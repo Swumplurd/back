@@ -1,9 +1,11 @@
 const { Router } = require("express");
-const Cliente = require("../models/Cliente");
+const { getClientes, postCliente, putCliente } = require("../controllers/cliente");
 const router = Router();
 
-router.get("/", );
+router.get("/", getClientes);
 
-router.post("/", )
+router.post("/", postCliente);
+
+router.put("/:id", putCliente);
 
 module.exports = router;

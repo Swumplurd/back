@@ -43,3 +43,38 @@ const postCliente = async(req, res) => {
         })
     }
 }
+
+const putCliente = async(req, res) => {
+    try {
+        const clienteId = req.params.id;
+        const cliente = await Cliente.findById(clienteId);
+
+        if (!cliente) {
+            return res.status(404).json({
+                ok: false,
+                msg: "no existe un cliente con ese id"
+            });
+        }
+
+        const clienteActualizado = await Cliente.findByIdAndUpdate(clienteId, req.body);
+
+        res.json({
+            ok: true,
+            msg: "cliente actualizado con exito",
+            data: clienteActualizado,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: "error en el servidor, contacta con el admin"
+        })
+    }
+}
+
+module.exports = {
+    getClientes,
+    postCliente,
+    putCliente
+}
