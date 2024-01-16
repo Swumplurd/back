@@ -338,5 +338,6 @@ module.exports = {
     postServicioCompleto,
     postServicioConClienteExistente,
     postServicioConClienteMotoExistente,
-    getProximosServicios
+    getProximosServicios,
+    getServiciosByMotoId
 }

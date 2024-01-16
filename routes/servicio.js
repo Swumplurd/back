@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getServicios, postServicio, putServicio, deleteServicio, postServicioCompleto, postServicioConClienteExistente, postServicioConClienteMotoExistente, getProximosServicios, getServicioById } = require("../controllers/servicio");
+const { getServicios, postServicio, putServicio, deleteServicio, postServicioCompleto, postServicioConClienteExistente, postServicioConClienteMotoExistente, getProximosServicios, getServicioById, getServiciosByMotoId } = require("../controllers/servicio");
 
 const router = Router();
 
@@ -7,7 +7,7 @@ router.get("/", getServicios);
 
 router.get("/busqueda/id/:id", getServicioById)
 
-router.get("/busqueda/moto/:motoid", )
+router.get("/busqueda/moto/:motoid", getServiciosByMotoId)
 
 router.get("/proximos", getProximosServicios)
 
