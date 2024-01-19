@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors");
 const express = require("express");
 const conexion = require("./db/config");
 
@@ -6,6 +7,7 @@ const app = express();
 conexion();
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/clientes", require("./routes/cliente"));
 app.use("/api/motos", require("./routes/moto"));
