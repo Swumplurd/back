@@ -9,6 +9,8 @@ conexion();
 app.use(express.json());
 app.use(cors());
 
+app.use("/api/auth", require("./routes/auth"))
+
 app.use("/api/clientes", require("./routes/cliente"));
 app.use("/api/motos", require("./routes/moto"));
 app.use("/api/servicios", require("./routes/servicio"));

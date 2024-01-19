@@ -3,7 +3,10 @@ const { getClientes, postCliente, putCliente, deleteCliente, getClienteById, get
 const { param } = require("express-validator");
 const validarCampos = require("../middlewares/validarCampos");
 const clienteValidation = require("../validations/clienteValidation");
+const validarJWT = require("../middlewares/validarJWT");
 const router = Router();
+
+router.use(validarJWT)
 
 router.get("/", getClientes);
 
