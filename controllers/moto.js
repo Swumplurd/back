@@ -2,7 +2,7 @@ const Moto = require("../models/Moto");
 
 const getMotos = async(req, res) => {
     try {
-        const motos = await Moto.find({}).populate("cliente", "nombres apellidos");
+        const motos = await Moto.find({}).populate("cliente", "nombres apellidos email");
 
         if (motos.length === 0) {
             return res.status(404).json({

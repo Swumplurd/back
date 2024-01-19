@@ -6,7 +6,7 @@ const clienteValidation = require("../validations/clienteValidation");
 const validarJWT = require("../middlewares/validarJWT");
 const router = Router();
 
-router.use(validarJWT)
+router.use(validarJWT);
 
 router.get("/", getClientes);
 
